@@ -1,0 +1,15 @@
+A. Se llama asi debido a que las dos clases "Caja de ahorro" y "Cuenta corriente" son clases que
+extienden de la clase "Cuenta". Toda transaccion esta "enganchada" a la clase "cuenta".
+
+B. this hace referencia a la clase que llamo al metodo, por lo que podria ser "Caja de ahorro" como
+"Cuenta corriente" dependiendo del caso.
+
+C. Es para proteger al metodo haciendo que solo los pueda ver los miembros que esten extendidos
+a la super clase.
+
+D. Se puede debido a que los metodos son compartidos por la super clase, aunque al hacerlo podria
+recibir diferentes resultados dependiendo de la clase que se utilice.
+
+E. Se implementa usando la palabra abstract al crear la clase, la clase abstracta permite que
+no se pueda crear instancias de esa clase pero si de sus hijos, permitiendo crear sub grupos
+de entidades con caracteristicas compartidas. 
