@@ -1,0 +1,46 @@
+@startuml
+Class Usuario{
+-nombre: String
+-direccion: String
+-dni: Integer
+-propiedades: List<Propiedad>
++getNombre(): String
++getDireccion(): String
++getDNI(): Integer
++getPropiedades(): List<Propiedad>
++agregarPropiedad(unaPropiedad: Propiedad)
++precioTotal(fechaInicial:DateLapse,fechaFinal:DateLapse):double
+}
+
+Class Propiedad{
+-nombreDescriptivo: String
+-direccion: String
+-precio: real
+-reservas: List<Reserva>
++getNombre(): String
++getDireccion(): String
++getPrecio(): real
++getReservas(): List<Reserva>
++consultarDisponibilidad(fechaInicio:LocalDate,fechaFinal: LocalDate): boolean
++cancelarReserva(reserva:Reserva):boolean
++precioTotal(fechaInicial:LocalDate,fechaFinal:LocalDate):double
+}
+
+Class Reserva{
+fechaInicial: LocalDate
+fechaFinal: LocalDate
+cantidadDeNoches: Integer
+propiedadReservada: Propiedad
++<<create>>Reserva(fechaInicial:LocalDate,fechaFinal:LocalDate,propiedadReservada:Propiedad)
++getCantidadDeNoches(): Integer
++getFechaInicial(): LocalDate
++getFechaFinal(): LocalDate
++getPropiedadReservada(): Propiedad
++valorReserva(): double
+}
+
+Usuario -> Propiedad : -usuarios 0..*
+Propiedad -> Reserva :  -reserva 0..*
+Reserva -> Propiedad : -propiedad 1
+
+@enduml
