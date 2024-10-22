@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ejercicio-test/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio-testttt/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio17-alquiler-de-propiedades/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio16-filtered-set/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio15-distribucion-electrica/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio14-intervalo-de-tiempo/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio13-cliente-de-correo/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio12-volumen-y-superficie-solidos/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio11-el-inversor/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio10-job-scheduler/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio9-cuenta-con-ganchos/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio8-method-lookup/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio7-red-de-alumbrado/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio6-genealogia-salvaje/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio5-figurasycuerpos/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio4-balanza-mejorada/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio3-presupuesto/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio2-balanza/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ejercicio-test/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio-testttt/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

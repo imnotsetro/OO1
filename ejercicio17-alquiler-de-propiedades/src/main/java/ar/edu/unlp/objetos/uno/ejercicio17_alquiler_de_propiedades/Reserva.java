@@ -25,13 +25,13 @@ public class Reserva {
 	public void setPropiedadReservada(Propiedad propiedadReservada) {
 		this.propiedadReservada = propiedadReservada;
 	}
-	
+
 	public double getValorReserva() {
-		return this.tiempo.sizeInDays() * this.propiedadReservada.getPrecio();
+		return this.tiempo.sizeInDays() * this.propiedadReservada.getPrecioNoche();
 	}
 	
 	public boolean disponibilidad(DataLapse pedido) {
-		return (! this.tiempo.overlaps(pedido));
+		return (this.tiempo.overlaps(pedido));
 	}
 	
 	

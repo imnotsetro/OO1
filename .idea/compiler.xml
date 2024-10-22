@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ejercicio10-job-scheduler" />
+        <module name="ejercicio5-figurasycuerpos" />
+        <module name="ejercicio7-red-de-alumbrado" />
+        <module name="ejercicio17-alquiler-de-propiedades" />
+        <module name="ejercicio16-filtered-set" />
+        <module name="ejercicio11-el-inversor" />
+        <module name="ejercicio3-presupuesto" />
+        <module name="ejercicio6-genealogia-salvaje" />
+        <module name="ejercicio15-distribucion-electrica" />
+        <module name="ejercicio14-intervalo-de-tiempo" />
+        <module name="ejercicio2-balanza" />
+        <module name="ejercicio13-cliente-de-correo" />
+        <module name="ejercicio4-balanza-mejorada" />
+        <module name="ejercicio9-cuenta-con-ganchos" />
+        <module name="ejercicio12-volumen-y-superficie-solidos" />
+        <module name="ejercicio8-method-lookup" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ejercicio-test" target="23" />
+      <module name="ejercicio-testttt" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

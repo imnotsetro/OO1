@@ -1,6 +1,7 @@
 package ar.edu.unlp.objetos.uno.ejercicio17_alquiler_de_propiedades;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
@@ -8,6 +9,14 @@ public class Usuario {
 	String direccion;
 	int dni;
 	List<Propiedad> propiedades;
+
+	public Usuario(String nombre, String direccion, int dni) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.dni = dni;
+		this.propiedades = new ArrayList<>();
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -37,8 +46,8 @@ public class Usuario {
 		this.propiedades.add(unaPropiedad);
 	}
 	
-	public double precioTotal (DataLapse fechaInicial, DataLapse fechaFinal) {
-		this.propiedades.stream().forEach(p -> p.get);
+	public double precioTotal (DataLapse fechas) {
+		return this.propiedades.stream().mapToDouble(p -> p.getPrecioTotal(fechas)).sum();
 	}
 	
 	

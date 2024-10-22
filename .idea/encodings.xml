@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ejercicio-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio-testttt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio-testttt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio10-job-scheduler/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio10-job-scheduler/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio11-el-inversor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio11-el-inversor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio12-volumen-y-superficie-solidos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio12-volumen-y-superficie-solidos/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio13-cliente-de-correo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio13-cliente-de-correo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio14-intervalo-de-tiempo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio14-intervalo-de-tiempo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio15-distribucion-electrica/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio15-distribucion-electrica/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio16-filtered-set/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio16-filtered-set/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio17-alquiler-de-propiedades/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio17-alquiler-de-propiedades/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio3-presupuesto/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio3-presupuesto/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio5-figurasycuerpos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio5-figurasycuerpos/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio6-genealogia-salvaje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio6-genealogia-salvaje/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio7-red-de-alumbrado/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio7-red-de-alumbrado/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio8-method-lookup/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio8-method-lookup/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio9-cuenta-con-ganchos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ejercicio9-cuenta-con-ganchos/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
