@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/ejercicio19-servicio-de-envios/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -21,12 +24,15 @@
         <module name="ejercicio13-cliente-de-correo" />
         <module name="ejercicio4-balanza-mejorada" />
         <module name="ejercicio9-cuenta-con-ganchos" />
+        <module name="ejercicio19-servicio-de-envio" />
         <module name="ejercicio12-volumen-y-superficie-solidos" />
         <module name="ejercicio8-method-lookup" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ejercicio18-politicas-de-cancelacion" target="23" />
+      <module name="ejercicio19-servicio-de-envios" target="1.8" />
+      <module name="ejercicio19-servicio-de-paquetes" target="23" />
       <module name="test" target="11" />
     </bytecodeTargetLevel>
   </component>

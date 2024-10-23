@@ -22,10 +22,15 @@
         <option value="$PROJECT_DIR$/test/pom.xml" />
         <option value="$PROJECT_DIR$/ejercicio17-alquiler-de-propiedades/pom.xml" />
         <option value="$PROJECT_DIR$/ejercicio18-politicas-de-cancelacion/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio19-servicio-de-envios/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio19-servicio-de-paquetes/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio19-servicio-de-envio/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/ejercicio19-servicio-de-envios/pom.xml" />
+        <option value="$PROJECT_DIR$/ejercicio19-servicio-de-paquetes/pom.xml" />
         <option value="$PROJECT_DIR$/test/pom.xml" />
       </set>
     </option>
