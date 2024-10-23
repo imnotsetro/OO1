@@ -9,13 +9,14 @@
         <module name="ejercicio10-job-scheduler" />
         <module name="ejercicio5-figurasycuerpos" />
         <module name="ejercicio7-red-de-alumbrado" />
-        <module name="ejercicio17-alquiler-de-propiedades" />
         <module name="ejercicio16-filtered-set" />
-        <module name="ejercicio11-el-inversor" />
+        <module name="ejercicio17-alquiler-de-propiedades" />
         <module name="ejercicio3-presupuesto" />
+        <module name="ejercicio11-el-inversor" />
+        <module name="ejercicio17-alquiler-de-propiedades (1)" />
         <module name="ejercicio6-genealogia-salvaje" />
-        <module name="ejercicio15-distribucion-electrica" />
         <module name="ejercicio14-intervalo-de-tiempo" />
+        <module name="ejercicio15-distribucion-electrica" />
         <module name="ejercicio2-balanza" />
         <module name="ejercicio13-cliente-de-correo" />
         <module name="ejercicio4-balanza-mejorada" />
@@ -25,8 +26,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ejercicio-test" target="23" />
-      <module name="ejercicio-testttt" target="11" />
+      <module name="ejercicio18-politicas-de-cancelacion" target="23" />
+      <module name="test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
