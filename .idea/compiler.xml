@@ -9,6 +9,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ejercicio20-liquidacion-de-haberes" />
         <module name="ejercicio10-job-scheduler" />
         <module name="ejercicio5-figurasycuerpos" />
         <module name="ejercicio7-red-de-alumbrado" />
