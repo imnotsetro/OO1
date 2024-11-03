@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class ContratoDePlanta extends Contrato{
     double sueldoMensual;
@@ -36,6 +37,10 @@ public class ContratoDePlanta extends Contrato{
 
     public void setMontoHijo(double montoHijo) {
         this.montoHijo = montoHijo;
+    }
+
+    public int getAntiguedadContrato(){
+        return (int) ChronoUnit.DAYS.between(this.getFechaInicio(), LocalDate.now());
     }
 
     public double getTotal() {

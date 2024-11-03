@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class ContratoPorHoras extends Contrato {
     private double valorHora;
@@ -36,6 +37,14 @@ public class ContratoPorHoras extends Contrato {
 
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public int getAntiguedadContrato(){
+        return (int)ChronoUnit.DAYS.between(this.getFechaInicio(), this.getFechaFin());
+    }
+
+    public boolean isActivo(){
+        return this.fechaFin.isBefore(LocalDate.now());
     }
 
     public double getTotal() {

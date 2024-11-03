@@ -27,7 +27,5 @@ public abstract class Contrato {
         this.propietario = propietario;
     }
 
-    protected double getTotal () {
-        //Se tiene que revisar uno por uno los contratos y sumar sus años
-    }
+    abstract public int getAntiguedadContrato();
 }

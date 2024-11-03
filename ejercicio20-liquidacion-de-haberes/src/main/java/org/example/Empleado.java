@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Empleado {
@@ -10,16 +11,18 @@ public class Empleado {
     private LocalDate fechaNacimiento;
     private boolean tieneHijo;
     private boolean tieneConyuge;
-    private List<Contrato> contratos;
+    private List<ContratoPorHoras> contratosHoras;
+    private ContratoDePlanta contratosPlanta;
 
-    public Empleado(String nombre, String apellido, int CUIL, LocalDate fechaNacimiento, boolean tieneHijo, boolean tieneConyuge, List<Contrato> contratos) {
+    public Empleado(String nombre, String apellido, int CUIL, LocalDate fechaNacimiento, boolean tieneHijo, boolean tieneConyuge) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.CUIL = CUIL;
         this.fechaNacimiento = fechaNacimiento;
         this.tieneHijo = tieneHijo;
         this.tieneConyuge = tieneConyuge;
-        this.contratos = contratos;
+        this.contratosHoras = new ArrayList<>();
+        this.contratosHoras = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -46,7 +49,34 @@ public class Empleado {
         return tieneConyuge;
     }
 
-    public List<Contrato> getContratos() {
-        return contratos;
+    public List<ContratoPorHoras> getContratosHoras() {
+        return contratosHoras;
+    }
+
+    public ContratoDePlanta getContratosPlanta() {
+        return contratosPlanta;
+    }
+
+    public double getBonusAntiguedadEmpleado() {
+        double bonus = 1.0;
+        int aux = this.getContratosHoras().stream().mapToInt(ch -> ch.getAntiguedadContrato()).sum();
+        aux += this.getContratosPlanta().getAntiguedadContrato();
+        int antiguedad = aux / 365;
+        if (antiguedad >= 20) {
+            bonus = 2.0;
+        } else if (antiguedad >= 15) {
+            bonus = 1.7;
+        } else if (antiguedad >= 10) {
+            bonus = 1.5;
+        } else if (antiguedad >= 5) {
+            bonus = 1.3;
+        }
+        return bonus;
+    }
+
+    public double getTotalContratos(){
+        double monto = this.getContratosHoras().stream().filter(ch -> ch.isActivo()).mapToDouble(ch -> ch.getTotal()).sum();
+        monto += this.getContratosPlanta().getTotal();
+        return monto;
     }
 }
