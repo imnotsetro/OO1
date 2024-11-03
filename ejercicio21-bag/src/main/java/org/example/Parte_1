@@ -1,0 +1,35 @@
+Respuestas a las preguntas de la parte 1:
+
+A. En Java existen las imprementaciones HashMap (sin orden para las claves), LinkedHashMap (manteiene un orden
+de la insercion de las claves) y TreeMap (ordena las claves en orden ascendentes o por algun comparador)
+
+B. Se puede preguntar con el uso del metodo 'containsKey' el cual se envia como parametro un objeto es la clave
+que se utilizara para buscar dentro del map, devolvera true en caso de encontrarse.
+
+C. Para recuperar un objeto asociado a una clave se utiliza el metodo 'get' enviando como parametro el objeto
+como la clave a buscar. En caso de no encontrarse devolvera 'null'.
+
+D. Para agregar claves o valores se usa el metodo 'put', en donde se envia los parametros K como la clave
+a asociar con el valor y V como el valor en si. Si se envia una clave ya existente se remplazara el valor
+asociado a la clave K con el valor enviado como parametro V. En HashMpa y LinkedHashMap al no haber un orden
+en concreto es posible usar claves y valores nulos, sin embargo no es posible usar claves nulas en TreeMap
+debido a que las claves intentan estar ordenadas en esa clase.
+
+E. Se puede eliminar claves o valores usando el metodo 'remove' que se envia como parametro la clave asociada
+al valor a eliminar, si se elimina se devolvera el valor eliminado, en caso contrario se enviara el valor NULL.
+No es necesario controlar la presencia del mismo ya que enviara NULL en caso de no encontrarse, ademas si se quiere
+eliminar una clave si tiene un valor en especifico se puede enviar como segundo parametro el valor que debe tener
+para la eliminacion.
+
+F. El remplazo de valores se hace con el metodo 'remplace', el cual se envia con dos parametros, K como la clave
+a buscar y V como el valor a cambiar con el viejo, se retornara el valor antiguo en caso de encontrarse  o NULL
+en caso de no encontrarse el valor con la clave enviada por parametro. Ademas puede enviarse tres parametros
+siendo estos K la clave, V el antiguo valor y VN como el nuevo valor; forzando que el valor a encontrarse en
+la clave sea el valor viejo y sera cambiando por el valor nuevo, ademas de devolver un boolean en caso de encontrarse
+o no.
+
+G. Existen diferentes formas de iterar, se puede iterar usando un 'for' y el metodo 'map.keySet()', el cual
+devolvera el metodo devolvera el set de claves del map y asi ir consiguiendo los valores de cada clave asociada
+a la misma. Otra forma es con el uso de 'map.values' que da una colecciond e los valores en el mapa. Si se
+busca una busqueda filtrada el uso de 'Map.Entry<K, V> entry' siendo K las claves y V los valores, dentro de
+un for y a la derecha del ';' utilizar 'map.entrySet' conseguiras la clave y valor asociado a la clave.

@@ -22,10 +22,12 @@
         <module name="ejercicio14-intervalo-de-tiempo" />
         <module name="ejercicio15-distribucion-electrica" />
         <module name="ejercicio2-balanza" />
+        <module name="ejercicio21-bag" />
         <module name="ejercicio13-cliente-de-correo" />
         <module name="ejercicio4-balanza-mejorada" />
         <module name="ejercicio9-cuenta-con-ganchos" />
         <module name="ejercicio19-servicio-de-envio" />
+        <module name="ejercicio13-cliente-de-correo (1)" />
         <module name="ejercicio12-volumen-y-superficie-solidos" />
         <module name="ejercicio8-method-lookup" />
       </profile>
