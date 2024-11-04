@@ -37,6 +37,10 @@ public class Pedido {
         return formaDeEnvio;
     }
 
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
     //Calcular el costo total de un pedido. Dado un pedido, se retorna su costo total que se calcula de la siguiente forma: (precio final en base a la forma de pago seleccionada) + (costo de envío en base a la forma de envío seleccionada).
     //Si la forma de pago es "al contado", el precio final es el que se indica en el producto
     //Si la forma de pago es "6 cuotas", el precio final se incrementa en un 20%

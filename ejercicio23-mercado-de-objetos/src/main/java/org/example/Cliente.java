@@ -18,7 +18,7 @@ public class Cliente extends Persona{
 
     public void crearPedido(String formaDePago, String formaDeEnvio, Producto unProducto, int cantSolicitada){
         if ((unProducto.getCantUnidades() - cantSolicitada) >= 0) {
-            this.pedidos.add(new Pedido(this,unProducto, cantSolicitada,formaDePago,formaDeEnvio));
+            this.pedidos.add(new Pedido(this,unProducto.getVendedor(), unProducto, cantSolicitada,formaDePago,formaDeEnvio));
         }
     }
 
