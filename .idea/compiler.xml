@@ -31,6 +31,7 @@
         <module name="ejercicio13-cliente-de-correo (1)" />
         <module name="ejercicio12-volumen-y-superficie-solidos" />
         <module name="ejercicio8-method-lookup" />
+        <module name="ejercicio24-poolcar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
