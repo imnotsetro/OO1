@@ -3,13 +3,15 @@ package ar.edu.unlp.objetos.uno.ejercicio17_alquiler_de_propiedades;
 import java.time.LocalDate;
 
 public class Reserva {
-	DataLapse tiempo;
-	Propiedad propiedadReservada;
+	private DataLapse tiempo;
+	private Propiedad propiedadReservada;
+	private Usuario inquilino;
 	
-	public Reserva(LocalDate fechaInicio, LocalDate fechaFinal, Propiedad propiedadReservada) {
+	public Reserva(LocalDate fechaInicio, LocalDate fechaFinal, Propiedad propiedadReservada, Usuario inquilino) {
 		if (propiedadReservada.disponibilidad(fechaInicio, fechaFinal)) {
 			this.propiedadReservada = propiedadReservada;
 			this.tiempo = new DataLapse(fechaInicio,fechaFinal);
+			this.inquilino=inquilino;
 		}
 	}
 	
@@ -22,17 +24,20 @@ public class Reserva {
 	public Propiedad getPropiedadReservada() {
 		return propiedadReservada;
 	}
-	public void setPropiedadReservada(Propiedad propiedadReservada) {
-		this.propiedadReservada = propiedadReservada;
-	}
 
 	public double getValorReserva() {
 		return this.tiempo.sizeInDays() * this.propiedadReservada.getPrecioNoche();
 	}
 	
-	public boolean disponibilidad(DataLapse pedido) {
+	public boolean estaOcupada(DataLapse pedido) {
 		return (this.tiempo.overlaps(pedido));
 	}
 	
-	
+	public boolean puedeCancelar(){
+		return tiempo.getFrom().isAfter(LocalDate.now()) ;// podrias agregar la comparacion de "or == hoy";
+	}
+
+	public LocalDate getInicio(){
+		return tiempo.getFrom();
+	}
 }

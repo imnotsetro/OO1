@@ -20,11 +20,14 @@ public class Guarderia extends Servicio{
         return 500.0;
     }
 
+    private double getCostoDiaTotal(){
+        return this.getCostoDia() + this.cantDias;
+    }
 
     protected double calcularCosto() {
-        if (this.getMascota().getServicios().size() >= 5) {
-            return (this.getCostoDia() + this.cantDias) * 0.90;
+        if (this.getMascota().isCantMayor(5)) {
+            return this.getCostoDiaTotal() * 0.90;
         }
-        return this.getCostoDia() + this.cantDias;
+        return this.getCostoDiaTotal();
     }
 }

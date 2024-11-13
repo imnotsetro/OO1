@@ -17,8 +17,12 @@ public class ConsultaMedica extends ServicioIntervenido{
         return 200.0;
     }
 
+    private double getCostoTotal() {
+
+    }
+
     protected double calcularCosto() {
-        if (this.getFechaAtencion().getDayOfWeek() == DayOfWeek.of(7)) {
+        if (this.isDomingo()) {
             return this.getCostoMaterialDescartable() + this.getAdicionalDomingo() + (this.getMedico().getFechaIngreso().getYear() - LocalDate.now().getYear()) * 100.0;
         } else {
             return this.getCostoMaterialDescartable() + (this.getMedico().getFechaIngreso().getYear() - LocalDate.now().getYear()) * 100.0;

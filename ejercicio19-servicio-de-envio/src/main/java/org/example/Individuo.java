@@ -19,8 +19,7 @@ public class Individuo extends Cliente {
     }
 
     @Override
-    public double calcularMonto(LocalDate inicio, LocalDate fin) {
-        DataLapse dl = new DataLapse(inicio, fin);
-        return (this.envios.stream().filter(e -> dl.includesDate(e.getFechaDespacho())).mapToDouble(e -> e.calcularMonto()).sum() * 0.90);
+    protected double descuento() {
+        return 0.90;
     }
 }

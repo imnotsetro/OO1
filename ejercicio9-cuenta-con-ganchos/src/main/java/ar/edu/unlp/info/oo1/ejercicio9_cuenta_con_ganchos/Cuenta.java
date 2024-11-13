@@ -1,7 +1,7 @@
 package ar.edu.unlp.info.oo1.ejercicio9_cuenta_con_ganchos;
 
 public abstract class Cuenta {
-	double saldo;
+	protected double saldo;
 	
 	public Cuenta(){
 		this.saldo = 0;
@@ -19,13 +19,7 @@ public abstract class Cuenta {
 		this.saldo -= monto;
 	}
 	
-	protected boolean puedeExtraer(double monto ) {
-		if ((this.saldo - monto) >= 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	protected abstract boolean puedeExtraer(double monto);
 	
 	public boolean extraer(double monto) {
 		if (this.puedeExtraer(monto)) {

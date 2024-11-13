@@ -9,17 +9,17 @@ import java.util.List;
 public class Propiedad {
 	String nombreDescriptivo;
 	String direccion;
-	String politicaCancelacion;
 	double precio;
 	List<Reserva> reservas;
+	private PoliticaDeCancelacion politicaCancelacion;
 
-	public Propiedad(String nombreDescriptivo, double precio, String direccion, String politica) {
+	public Propiedad(String nombreDescriptivo, double precio, String direccion, PoliticaDeCancelacion politica) {
 		this.nombreDescriptivo = nombreDescriptivo;
 		this.reservas = reservas;
 		this.precio = precio;
 		this.direccion = direccion;
-		this.politicaCancelacion=politica;
 		this.reservas = new ArrayList<>();
+		this.politicaCancelacion = politica;
 	}
 
 	public String getNombreDescriptivo() {
@@ -38,11 +38,11 @@ public class Propiedad {
 		this.direccion = direccion;
 	}
 
-	public String getPoliticaCancelacion() {
+	public PoliticaDeCancelacion getPoliticaCancelacion() {
 		return politicaCancelacion;
 	}
 
-	public void setPoliticaCancelacion(String politicaCancelacion) {
+	public void setPoliticaCancelacion(PoliticaDeCancelacion politicaCancelacion) {
 		this.politicaCancelacion = politicaCancelacion;
 	}
 
@@ -67,27 +67,32 @@ public class Propiedad {
 	}
 
 	public double cancelarReserva(Reserva unaReserva) {
-		double monto = 0;
-		if (! unaReserva.getTiempo().includesDate(LocalDate.now()) || this.politicaCancelacion.equals("estricta")) {
-			switch (this.politicaCancelacion) {
-				case "flexible":
-					monto = this.getPrecioNoche() * unaReserva.getTiempo().sizeInDays();
-				case "moderada":
-					if (ChronoUnit.DAYS.between(LocalDate.now(), unaReserva.getTiempo().getFrom()) >= 7) {
-						monto = this.getPrecioNoche() * unaReserva.getTiempo().sizeInDays();
-					} else {
-						if (ChronoUnit.DAYS.between(LocalDate.now(), unaReserva.getTiempo().getFrom()) >= 2) {
-							monto = (this.getPrecioNoche() * unaReserva.getTiempo().sizeInDays()) * 0.5;
-						}
-					}
-			}
+		if (unaReserva.puedeCancelar()){ // delegacion polimorfica. NO SWITCH STATEMENTS
+			reservas.remove(unaReserva);
+			return politicaCancelacion.montoAReembolsar(unaReserva);
 		}
-			this.reservas.remove(unaReserva);;
-			return monto;
+		return 0; // throw new Exception("No se puede cancelar");
+
+//		if (! unaReserva.getTiempo().includesDate(LocalDate.now()) || this.politicaCancelacion.equals("estricta")) {
+//			switch (this.politicaCancelacion) {
+//				case "flexible":
+//					monto = this.getPrecioNoche() * unaReserva.getTiempo().sizeInDays();
+//				case "moderada":
+//					if (ChronoUnit.DAYS.between(LocalDate.now(), unaReserva.getTiempo().getFrom()) >= 7) {
+//						monto = this.getPrecioNoche() * unaReserva.getTiempo().sizeInDays();
+//					} else {
+//						if (ChronoUnit.DAYS.between(LocalDate.now(), unaReserva.getTiempo().getFrom()) >= 2) {
+//							monto = (this.getPrecioNoche() * unaReserva.getTiempo().sizeInDays()) * 0.5;
+//						}
+//					}
+//			}
+//		}
+//			this.reservas.remove(unaReserva);;
+//			return monto;
     }
 	
 	public boolean disponibilidad(LocalDate fechaInicial, LocalDate fechaFinal) {
 		DataLapse pedido = new DataLapse(fechaInicial,fechaFinal);
-		return reservas.stream().noneMatch(r -> r.disponibilidad(pedido));
+		return reservas.stream().noneMatch(r -> r.estaOcupada(pedido));
 	}
 }

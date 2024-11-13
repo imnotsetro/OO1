@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Viaje {
     private String origen;
@@ -9,6 +10,7 @@ public class Viaje {
     private Vehiculo vehiculo;
     private LocalDate fechaViaje;
     private int espacioDisponible;
+    private List<Usuario> listaPasajes;
 
     public Viaje(String origen, String destino, double costoTotal, Vehiculo vehiculo, LocalDate fechaViaje) {
         this.origen = origen;

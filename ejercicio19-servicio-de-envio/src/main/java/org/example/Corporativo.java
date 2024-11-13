@@ -19,7 +19,7 @@ public class Corporativo extends Cliente {
     }
 
     @Override
-    public double calcularMonto(LocalDate inicio, LocalDate fin) {
+    protected double descuento() {
         return 0;
     }
 }

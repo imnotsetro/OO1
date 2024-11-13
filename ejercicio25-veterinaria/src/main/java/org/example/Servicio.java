@@ -1,5 +1,6 @@
 package org.example;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public abstract class Servicio {
@@ -17,6 +18,10 @@ public abstract class Servicio {
 
     public LocalDate getFechaAtencion() {
         return fechaAtencion;
+    }
+
+    public boolean isDomingo(){
+        return this.getFechaAtencion().getDayOfWeek() == DayOfWeek.of(7);
     }
 
     abstract protected double calcularCosto();

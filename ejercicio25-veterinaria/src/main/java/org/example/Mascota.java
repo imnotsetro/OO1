@@ -32,6 +32,10 @@ public class Mascota {
         return servicios;
     }
 
+    public boolean isCantMayor(int aux){
+        return (this.servicios.size() >= aux);
+    }
+
     public double getRecaudacionGenerada(LocalDate unaFecha){
         return this.servicios.stream().filter(s -> s.getFechaAtencion().equals(unaFecha)).mapToDouble(s -> s.calcularCosto()).sum();
     }

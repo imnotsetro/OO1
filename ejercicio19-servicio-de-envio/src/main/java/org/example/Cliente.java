@@ -43,5 +43,14 @@ public abstract class Cliente {
         this.envios.add(unEnvio);
     }
 
-    public abstract double calcularMonto (LocalDate inicio, LocalDate fin);
+    protected double calcularMontoEnvios (LocalDate inicio, LocalDate fin){
+        DataLapse dl = new DataLapse(inicio, fin);
+        return this.envios.stream().filter(e -> dl.includesDate(e.getFechaDespacho())).mapToDouble(e -> e.calcularMonto()).sum();
+    }
+
+    public double calcularMonto (LocalDate inicio, LocalDate fin) {
+        return this.calcularMontoEnvios(inicio, fin) * this.descuento();
+    }
+
+    abstract protected double descuento ();
 }

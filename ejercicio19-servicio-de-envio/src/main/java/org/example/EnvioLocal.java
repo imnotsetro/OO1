@@ -11,10 +11,6 @@ public class EnvioLocal extends Envio {
     }
 
     public double calcularMonto() {
-        if (this.entregaRapida) {
-            return 500.0;
-        } else {
-            return 1000.0;
-        }
+        return this.entregaRapida ? 500.0 : 1000.0;
     }
 }

@@ -24,4 +24,8 @@ public class Medico {
     public double getHonorarios() {
         return honorarios;
     }
+
+    public double getHonorarios(){
+
+    }
 }

@@ -16,13 +16,10 @@ public class CuentaCorriente extends Cuenta {
 		this.limiteDescubierto = limiteDescubierto;
 	}
 
-	public boolean extraer(double monto) {
-		if ((this.saldo - monto) >= this.limiteDescubierto) {
-			super.extraerSinControlar(monto);
-			return true;
-		} else {
-			return false;
-		}
+	@Override
+	protected boolean puedeExtraer(double monto) {
+		return (this.saldo - monto >= limiteDescubierto);
 	}
-	
+
+
 }
