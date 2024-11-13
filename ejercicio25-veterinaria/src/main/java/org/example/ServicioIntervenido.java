@@ -14,8 +14,14 @@ public abstract class ServicioIntervenido extends Servicio{
         return medico;
     }
 
+    protected double getAdicional() {
+        return medico.getAniosServicio() * 100;
+    }
+
+    protected abstract double calcularCostoTotal();
+
     @Override
     protected double calcularCosto() {
-        return this.medico.getHonorarios() + this.calcularCosto();
+        return this.medico.getHonorarios() + this.calcularCostoTotal();
     }
 }

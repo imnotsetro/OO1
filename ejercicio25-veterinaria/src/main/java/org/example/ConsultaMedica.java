@@ -18,14 +18,14 @@ public class ConsultaMedica extends ServicioIntervenido{
     }
 
     private double getCostoTotal() {
-
+        return this.getCostoMaterialDescartable() + this.getAdicional();
     }
 
-    protected double calcularCosto() {
+    protected double calcularCostoTotal() {
         if (this.isDomingo()) {
-            return this.getCostoMaterialDescartable() + this.getAdicionalDomingo() + (this.getMedico().getFechaIngreso().getYear() - LocalDate.now().getYear()) * 100.0;
+            return this.getCostoTotal() + this.getAdicionalDomingo();
         } else {
-            return this.getCostoMaterialDescartable() + (this.getMedico().getFechaIngreso().getYear() - LocalDate.now().getYear()) * 100.0;
+            return this.getCostoTotal();
         }
     }
 }

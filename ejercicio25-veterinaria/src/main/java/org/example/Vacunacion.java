@@ -7,7 +7,7 @@ public class Vacunacion extends ServicioIntervenido{
     private String vacuna;
     private double costo;
 
-    public Vacunacion(Mascota mascota, LocalDate fechaAtencion, Medico medico, String vacuna, double costo, LocalDate fechaIngreso) {
+    public Vacunacion(Mascota mascota, LocalDate fechaAtencion, Medico medico, String vacuna, double costo) {
         super(mascota, fechaAtencion, medico);
         this.vacuna = vacuna;
         this.costo = costo;
@@ -30,14 +30,13 @@ public class Vacunacion extends ServicioIntervenido{
     }
 
     private double getCostoTotal(){
-        return this.getCostoMaterialDescartable() + this.costo + (this.getMedico().getFechaIngreso().getYear() - LocalDate.now().getYear()) * 100.0;
+        return this.getCostoMaterialDescartable() + this.costo;
     }
 
-    protected double calcularCosto() {
+    protected double calcularCostoTotal() {
         if (this.isDomingo()) {
             return this.getCostoTotal() + this.getAdicionalDomingo();
         }
         return this.getCostoTotal();
-
     }
 }

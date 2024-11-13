@@ -6,10 +6,9 @@ public class Guarderia extends Servicio{
     private int cantDias;
     private LocalDate fechaIngreso;
 
-    public Guarderia(Mascota mascota, LocalDate fechaAtencion, int cantDias, LocalDate fechaIngreso) {
+    public Guarderia(Mascota mascota, LocalDate fechaAtencion, int cantDias) {
         super(mascota, fechaAtencion);
         this.cantDias = cantDias;
-        this.fechaIngreso = fechaIngreso;
     }
 
     public int getCantDias() {
@@ -21,10 +20,10 @@ public class Guarderia extends Servicio{
     }
 
     private double getCostoDiaTotal(){
-        return this.getCostoDia() + this.cantDias;
+        return this.getCostoDia() * this.cantDias;
     }
 
-    protected double calcularCosto() {
+    public double calcularCosto() {
         if (this.getMascota().isCantMayor(5)) {
             return this.getCostoDiaTotal() * 0.90;
         }

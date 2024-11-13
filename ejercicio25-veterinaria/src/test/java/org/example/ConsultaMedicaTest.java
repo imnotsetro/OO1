@@ -1,0 +1,27 @@
+package org.example;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.util.LinkedList;
+
+import static org.junit.jupiter.api.Assertions.*;
+class ConsultaMedicaTest {
+    ConsultaMedica consulta;
+    Mascota mascota;
+    Medico medico;
+
+
+    @BeforeEach
+    void setUp() {
+        mascota = new Mascota("Pulga", LocalDate.now().minusYears(4),"Bulldog",new LinkedList<>());
+        medico = new Medico("Marcos", LocalDate.now().minusYears(5),4000.0);
+        consulta = new ConsultaMedica(mascota, medico, LocalDate.now());
+    }
+
+    @Test
+    void calcularCostoTotal() {
+        assertEquals(4800.0,this.consulta.calcularCosto());
+    }
+}

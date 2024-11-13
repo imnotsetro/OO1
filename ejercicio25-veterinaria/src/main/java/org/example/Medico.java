@@ -25,7 +25,7 @@ public class Medico {
         return honorarios;
     }
 
-    public double getHonorarios(){
-
+    public double getAniosServicio(){
+        return LocalDate.now().getYear() - this.fechaIngreso.getYear();
     }
 }
