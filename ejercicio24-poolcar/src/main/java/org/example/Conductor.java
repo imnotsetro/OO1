@@ -12,16 +12,16 @@ public class Conductor extends Usuario{
         return vehiculoPropio;
     }
 
-    //Es llamado desde viaje
-    public void procesarViaje(Viaje v, double monto) {
-        this.setSaldo(this.getSaldo() - (monto - (this.vehiculoPropio.getValorMercado() * 0.1)));
-    }
-
     @Override
     public double getComision() {
-        if (this.vehiculoPropio.getAnioFabricacion() < 5) {
+        if (this.vehiculoPropio.esMenosViejo(5)) {
             return 0.99;
         }
         return 0.90;
     }
+
+    public void pagarViaje(double monto) {
+        this.descontarSaldo(monto - (this.vehiculoPropio.getValorMercado() * 0.1));
+    }
+
 }

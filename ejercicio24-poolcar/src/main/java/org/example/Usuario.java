@@ -1,8 +1,11 @@
 package org.example;
 
+import java.util.List;
+
 public abstract class Usuario {
     private String nombre;
     private double saldo;
+    private List<Viaje> viajesRealizados;
 
     public Usuario(String nombre, double saldo) {
         this.nombre = nombre;
@@ -17,13 +20,20 @@ public abstract class Usuario {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     abstract public double getComision();
 
-    protected void cargarSaldo(Double monto){
-        this.saldo = this.saldo + this.getComision();
+    abstract public void pagarViaje(double monto);
+
+    protected void procesarViaje(Viaje viaje, double monto){
+        this.viajesRealizados.add(viaje);
+        this.pagarViaje(monto);
+    }
+
+    protected void cargarSaldo(double monto){
+        this.saldo += (monto - (monto * this.getComision()));
+    }
+
+    protected void descontarSaldo(double monto){
+        this.saldo -= monto;
     }
 }

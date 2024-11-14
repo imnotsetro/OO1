@@ -32,6 +32,10 @@ public class Mascota {
         return servicios;
     }
 
+    public void darAltaServicio(Servicio servicio){
+        this.servicios.add(servicio);
+    }
+
     public boolean isCantMayor(int aux){
         return (this.servicios.size() >= aux);
     }

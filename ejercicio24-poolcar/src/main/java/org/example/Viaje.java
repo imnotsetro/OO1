@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Viaje {
@@ -9,8 +10,7 @@ public class Viaje {
     private double costoTotal;
     private Vehiculo vehiculo;
     private LocalDate fechaViaje;
-    private int espacioDisponible;
-    private List<Usuario> listaPasajes;
+    private List<Usuario> listaPasajeros;
 
     public Viaje(String origen, String destino, double costoTotal, Vehiculo vehiculo, LocalDate fechaViaje) {
         this.origen = origen;
@@ -18,7 +18,8 @@ public class Viaje {
         this.costoTotal = costoTotal;
         this.vehiculo = vehiculo;
         this.fechaViaje = fechaViaje;
-        this.espacioDisponible = vehiculo.getCapacidad() - 1;
+        this.listaPasajeros = new ArrayList<>();
+        this.agregarPasajero(this.vehiculo.getPropietario());
     }
 
     public String getOrigen() {
@@ -41,20 +42,21 @@ public class Viaje {
         return fechaViaje;
     }
 
-    public int getEspacioDisponible() {
-        return espacioDisponible;
+    public void agregarPasajero(Usuario usuario) {
+        if (this.vehiculo.hayLugar(this.listaPasajeros.size())){
+            this.listaPasajeros.add(usuario);
+        }
     }
 
-    public void agregarPasajero() {
-        this.espacioDisponible --;
+    public boolean fechaAnteriorADias(int dias){
+        return this.fechaViaje.isBefore(LocalDate.now().minusDays(dias));
     }
 
-    //Rarisimo: En caso de que no se deba hacer asi la segunda opcion seria crear una lista de viajes para el conductor tambien.. lo que no pide el enunciado
-    public void procesarViajeConductor(){
-        this.vehiculo.getPropietario().procesarViaje(this, this.getCostoTotalIndividual());
+    public double getCostoIndividual() {
+        return this.costoTotal / this.vehiculo.capacidadActual(this.listaPasajeros.size());
     }
 
-    public double getCostoTotalIndividual() {
-        return this.getCostoTotal() / (this.getVehiculo().getCapacidad() - (this.getEspacioDisponible()));
+    public void procesarViaje() {
+        this.listaPasajeros.stream().forEach(u -> u.procesarViaje(this, this.getCostoIndividual()));
     }
 }

@@ -14,24 +14,21 @@ public class Pasajero extends Usuario{
 
     @Override
     public double getComision(){
-        if (this.viajes.stream().findAny().filter(v -> v.getFechaViaje().isBefore(LocalDate.now().minusDays(30))) != null) {
+        if (this.viajes.stream().findAny().filter(v -> v.fechaAnteriorADias(30)).isPresent()) {
             return 0.90;
         }
         return 1.0;
     }
 
-    public void registrarViaje(Viaje v) {
-        if ((v.getEspacioDisponible() - 1) > 0) {
-            this.viajes.add(v);
-            v.agregarPasajero();
-        }
+    public void registrarViaje(Viaje viaje) {
+        viaje.agregarPasajero(this);
     }
 
-    public void procesarViaje(Viaje v) {
-        if (this.viajes.stream().findAny() != null) {
-            this.setSaldo(this.getSaldo() - (v.getCostoTotalIndividual() - 500.0));
+    public void pagarViaje(double monto) {
+        if (!this.viajes.isEmpty()) {
+            this.descontarSaldo(monto - 500.0);
         } else {
-            this.setSaldo(this.getSaldo() - (v.getCostoTotalIndividual()));
+            this.descontarSaldo(monto);
         }
     }
 }
