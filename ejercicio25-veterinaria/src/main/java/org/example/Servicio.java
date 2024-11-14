@@ -20,6 +20,7 @@ public abstract class Servicio {
         return fechaAtencion;
     }
 
+
     public boolean isDomingo(){
         return this.getFechaAtencion().getDayOfWeek() == DayOfWeek.of(7);
     }

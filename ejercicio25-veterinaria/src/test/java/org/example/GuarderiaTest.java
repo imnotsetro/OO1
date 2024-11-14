@@ -12,14 +12,21 @@ class GuarderiaTest {
     Mascota mascota;
     Guarderia guarderia;
 
-    @BeforeEach
-    void setUp() {
+    @Test
+    void calcularCostoMenor5() {
         mascota = new Mascota("Pulga", LocalDate.now().minusYears(4),"Bulldog",new LinkedList<>());
         guarderia = new Guarderia(mascota, LocalDate.now(), 5);
+        assertEquals(2500, this.guarderia.calcularCosto());
     }
 
     @Test
-    void calcularCosto() {
-        assertEquals(2500, this.guarderia.calcularCosto());
+    void calcularCostoMayor5() {
+        LinkedList<Servicio> L = new LinkedList<Servicio>();
+        for (int i = 0; i < 5; i++) {
+            L.add(guarderia);
+        }
+        mascota = new Mascota("Pulga", LocalDate.now().minusYears(4),"Bulldog",L);
+        guarderia = new Guarderia(mascota, LocalDate.now(), 5);
+        assertEquals(2500 * 0.90, this.guarderia.calcularCosto());
     }
 }

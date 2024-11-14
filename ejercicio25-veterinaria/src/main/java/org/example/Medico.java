@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Medico {
     private String nombre;
@@ -26,6 +27,6 @@ public class Medico {
     }
 
     public double getAniosServicio(){
-        return LocalDate.now().getYear() - this.fechaIngreso.getYear();
+        return ChronoUnit.YEARS.between(fechaIngreso, LocalDate.now());
     }
 }
