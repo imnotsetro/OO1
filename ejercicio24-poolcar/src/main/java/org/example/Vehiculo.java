@@ -6,10 +6,10 @@ import java.time.temporal.ChronoUnit;
 
 public class Vehiculo {
     private Conductor propietario;
-    private String descripcion;
-    private int capacidad;
-    private Year anioFabricacion;
-    private double valorMercado;
+    private final String descripcion;
+    private final int capacidad;
+    private final Year anioFabricacion;
+    private final double valorMercado;
 
     public Vehiculo(Conductor propietario, String descripcion, int capacidad, Year anioFabricacion, double valorMercado) {
         this.propietario = propietario;

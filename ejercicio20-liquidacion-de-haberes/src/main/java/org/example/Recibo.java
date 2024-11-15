@@ -3,9 +3,9 @@ package org.example;
 import java.time.LocalDate;
 
 public class Recibo {
-    private Empleado propietario;
-    private LocalDate fechaGenerado;
-    private double montoTotal;
+    private final Empleado propietario;
+    private final LocalDate fechaGenerado;
+    private final double montoTotal;
 
     public Recibo(Empleado propietario) {
         this.propietario = propietario;

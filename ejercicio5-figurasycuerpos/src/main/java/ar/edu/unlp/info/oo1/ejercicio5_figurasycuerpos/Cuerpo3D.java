@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo1.ejercicio5_figurasycuerpos;
 
-public class Cuerpo3D extends Object{
+public class Cuerpo3D {
 	double altura;
 	Forma caraBasal;
 	

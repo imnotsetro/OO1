@@ -16,19 +16,17 @@ public class Cliente extends Persona{
         return pedidos;
     }
 
-    public void crearPedido(String formaDePago, String formaDeEnvio, Producto unProducto, int cantSolicitada){
-        if ((unProducto.getCantUnidades() - cantSolicitada) >= 0) {
-            this.pedidos.add(new Pedido(this,unProducto.getVendedor(), unProducto, cantSolicitada,formaDePago,formaDeEnvio));
+    public void crearPedido(MetodoPago formaDePago, Envio formaDeEnvio, Producto unProducto, int cantSolicitada){
+        if (unProducto.existeStock(cantSolicitada)){
+            this.pedidos.add(new Pedido(this,formaDePago, formaDeEnvio, unProducto, cantSolicitada));
         }
     }
 
     public Map<String, Integer> conocerProductosCategoria(){
-        Map<String, Integer> m = pedidos.stream()
-                .collect(Collectors.toMap(
-                pedido -> pedido.getProductoSolicitado().getCategoria(),
-                        Pedido::getCantSolicitada,
-                        Integer::sum
-        ));
-        return m;
+        return pedidos.stream()
+                .collect(Collectors.groupingBy(
+                        pedido -> pedido.getProductoSolicitado().getCategoria(),
+                        Collectors.summingInt(Pedido::getCantSolicitada)
+                ));
     }
 }

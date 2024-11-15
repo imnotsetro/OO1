@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Mascota {
-    private String nombre;
-    private LocalDate fechaNacimiento;
-    private String especie;
-    private List<Servicio> servicios;
+    private final String nombre;
+    private final LocalDate fechaNacimiento;
+    private final String especie;
+    private final List<Servicio> servicios;
 
     public Mascota(String nombre, LocalDate fechaNacimiento, String especie, List<Servicio> servicios) {
         this.nombre = nombre;

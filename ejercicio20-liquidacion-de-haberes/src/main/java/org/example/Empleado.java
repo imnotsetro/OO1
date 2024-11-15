@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empleado {
-    private String nombre;
-    private String apellido;
-    private int CUIL;
-    private LocalDate fechaNacimiento;
-    private boolean tieneHijo;
-    private boolean tieneConyuge;
+    private final String nombre;
+    private final String apellido;
+    private final int CUIL;
+    private final LocalDate fechaNacimiento;
+    private final boolean tieneHijo;
+    private final boolean tieneConyuge;
     private List<ContratoPorHoras> contratosHoras;
     private ContratoDePlanta contratosPlanta;
 

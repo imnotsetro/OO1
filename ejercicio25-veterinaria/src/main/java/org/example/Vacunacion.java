@@ -4,8 +4,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Vacunacion extends ServicioIntervenido{
-    private String vacuna;
-    private double costo;
+    private final String vacuna;
+    private final double costo;
 
     public Vacunacion(Mascota mascota, LocalDate fechaAtencion, Medico medico, String vacuna, double costo) {
         super(mascota, fechaAtencion, medico);

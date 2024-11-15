@@ -2,11 +2,11 @@ package ar.edu.unlp.info.oo1.ejercicio10_job_scheduler;
 
 public class JobDescription {
 
-	private double effort;
+	private final double effort;
 
-	private int priority;
+	private final int priority;
 
-	private String description;
+	private final String description;
 
 	public JobDescription (double anEffort, int aPriority, String aDescription) {
 		this.effort = anEffort;

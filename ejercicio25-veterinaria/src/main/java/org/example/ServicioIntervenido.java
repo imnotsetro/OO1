@@ -3,7 +3,7 @@ package org.example;
 import java.time.LocalDate;
 
 public abstract class ServicioIntervenido extends Servicio{
-    private Medico medico;
+    private final Medico medico;
 
     public ServicioIntervenido(Mascota mascota, LocalDate fechaAtencion, Medico medico) {
         super(mascota, fechaAtencion);

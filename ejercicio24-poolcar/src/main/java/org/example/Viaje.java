@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Viaje {
-    private String origen;
-    private String destino;
-    private double costoTotal;
-    private Vehiculo vehiculo;
-    private LocalDate fechaViaje;
-    private List<Usuario> listaPasajeros;
+    private final String origen;
+    private final String destino;
+    private final double costoTotal;
+    private final Vehiculo vehiculo;
+    private final LocalDate fechaViaje;
+    private final List<Usuario> listaPasajeros;
 
     public Viaje(String origen, String destino, double costoTotal, Vehiculo vehiculo, LocalDate fechaViaje) {
         this.origen = origen;

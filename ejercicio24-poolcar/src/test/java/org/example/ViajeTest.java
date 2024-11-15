@@ -18,7 +18,9 @@ class ViajeTest {
     @Test
     void agregarPasajero() {
         vehiculo = new Vehiculo(conductor, "alguna descripcion", 4, Year.of(2020), 1000.0);
-        viaje = new Viaje("test", "test", 2500.0, vehiculo, LocalDate.now());
+        conductor = new Conductor("Javier", 10000.0, new ArrayList<>(), vehiculo);
+        vehiculo.setPropietario(conductor);
+        viaje = new Viaje("test", "test", 2500.0, vehiculo, LocalDate.now().minusDays(45));
         pasajero = new Pasajero("Michael", 5000.0, new ArrayList<>());
         viaje.agregarPasajero(pasajero);
         assertEquals(2, this.viaje.getCantPasajeros());
@@ -35,7 +37,7 @@ class ViajeTest {
         vehiculo = new Vehiculo(conductor, "alguna descripcion", 4, Year.of(2020), 1000.0);
         conductor = new Conductor("Javier", 10000.0, new ArrayList<>(), vehiculo);
         vehiculo.setPropietario(conductor);
-        viaje = new Viaje("test", "test", 2500.0, vehiculo, LocalDate.now());
+        viaje = new Viaje("test", "test", 2500.0, vehiculo, LocalDate.now().minusDays(45));
         pasajero = new Pasajero("Michael", 5000.0, new ArrayList<>());
         viaje.agregarPasajero(pasajero);
         viaje.procesarViaje();

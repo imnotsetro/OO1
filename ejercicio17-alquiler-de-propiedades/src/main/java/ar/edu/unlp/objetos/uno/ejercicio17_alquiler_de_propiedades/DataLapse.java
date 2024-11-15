@@ -29,10 +29,6 @@ public class DataLapse {
 	}
 	
 	public boolean includesDate(LocalDate other) {
-		if (other.isBefore(this.to) && other.isAfter(this.from)) {
-			return true;
-		} else {
-			return false;
-		}
+        return other.isBefore(this.to) && other.isAfter(this.from);
 	}
 }

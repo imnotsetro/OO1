@@ -1,8 +1,8 @@
 package org.example;
 
 public abstract class Persona {
-    private String nombre;
-    private String direccion;
+    private final String nombre;
+    private final String direccion;
 
     public Persona(String nombre, String direccion) {
         this.nombre = nombre;

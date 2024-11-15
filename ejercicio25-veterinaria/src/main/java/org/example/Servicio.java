@@ -4,8 +4,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public abstract class Servicio {
-    private Mascota mascota;
-    private LocalDate fechaAtencion;
+    private final Mascota mascota;
+    private final LocalDate fechaAtencion;
 
     public Servicio(Mascota mascota, LocalDate fechaAtencion) {
         this.mascota = mascota;

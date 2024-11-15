@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Medico {
-    private String nombre;
-    private LocalDate fechaIngreso;
-    private double honorarios;
+    private final String nombre;
+    private final LocalDate fechaIngreso;
+    private final double honorarios;
 
     public Medico(String nombre, LocalDate fechaIngreso, double honorarios) {
         this.nombre = nombre;

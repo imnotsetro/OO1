@@ -1,8 +1,8 @@
 package org.example;
 
 public class Jugador {
-    private String nombre;
-    private String apellido;
+    private final String nombre;
+    private final String apellido;
 
     public Jugador(String nombre, String apellido) {
         this.nombre = nombre;

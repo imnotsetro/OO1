@@ -56,7 +56,7 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            private Iterator<Map.Entry<T, Integer>> entryIterator = elements.entrySet().iterator();
+            private final Iterator<Map.Entry<T, Integer>> entryIterator = elements.entrySet().iterator();
             private Map.Entry<T, Integer> currentEntry;
             private int remainingCount;
 

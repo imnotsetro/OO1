@@ -1,8 +1,8 @@
 package org.example;
 
-public class CalculadoraDeDistancia {
+public interface CalculadoraDeDistancia {
 
-    public double distanciaEntre (String direccion1, String direccion2) {
+    static double distanciaEntre(String direccion1, String direccion2) {
         return 100.0;
     }
 }

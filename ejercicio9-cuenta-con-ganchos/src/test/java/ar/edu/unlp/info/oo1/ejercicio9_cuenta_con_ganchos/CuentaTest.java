@@ -20,16 +20,16 @@ public class CuentaTest {
 	@Test
 	void testConstructor() {
 		assertEquals(raul.getSaldo(),0);
-		assertTrue(raul.getLimiteDescubierto() == 0);
-		assertTrue(perez.getSaldo() == 0);
+        assertEquals(0, raul.getLimiteDescubierto());
+        assertEquals(0, perez.getSaldo());
 	}
 
 	@Test
 	void testDepositarYExtraer() {
 		raul.depositar(500.0);
-		assertTrue(raul.getSaldo() == 500.0);
+        assertEquals(500.0, raul.getSaldo());
 		raul.extraer(300.0);
-		assertTrue(raul.getSaldo() == 200.0);
+        assertEquals(200.0, raul.getSaldo());
 	}
 	
 	@Test
@@ -43,15 +43,15 @@ public class CuentaTest {
 		raul.setLimiteDescubierto(-300.0);
 		raul.depositar(200.0);
 		raul.extraer(300.0);
-		assertTrue(raul.getSaldo() == -100.0);
+        assertEquals(-100.0, raul.getSaldo());
 	}
 	
 	@Test
 	void testTransferir() {
 		raul.depositar(500.0);
-		assertTrue(raul.getSaldo() == 500.0);
+        assertEquals(500.0, raul.getSaldo());
 		raul.transferirACuenta(200.0, perez);
-		assertTrue(raul.getSaldo() == 300.0);
-		assertTrue(perez.getSaldo() == 196.0);
+        assertEquals(300.0, raul.getSaldo());
+        assertEquals(196.0, perez.getSaldo());
 	}
 }

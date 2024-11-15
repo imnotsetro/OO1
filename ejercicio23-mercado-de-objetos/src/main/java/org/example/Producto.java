@@ -1,10 +1,10 @@
 package org.example;
 
 public class Producto {
-    private String nombre;
-    private String categoria;
-    private double precio;
-    private Vendedor vendedor;
+    private final String nombre;
+    private final String categoria;
+    private final double precio;
+    private final Vendedor vendedor;
     private int cantUnidades;
 
     public Producto(String nombre, String categoria, double precio, Vendedor vendedor, int cantUnidades) {
@@ -32,5 +32,17 @@ public class Producto {
 
     public Vendedor getVendedor() {
         return vendedor;
+    }
+
+    public boolean existeStock(int cant){
+        return this.cantUnidades >= cant;
+    }
+
+    public void retirarProductos(int cant){
+        this.cantUnidades -= cant;
+    }
+
+    public double getPrecioTotal(int cant){
+        return this.precio * cant;
     }
 }

@@ -3,7 +3,7 @@ package org.example;
 import java.util.List;
 
 public abstract class Usuario {
-    private String nombre;
+    private final String nombre;
     private double saldo;
     private List<Viaje> viajesRealizados;
 

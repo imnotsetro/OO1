@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo1.ejercicio7_red_de_alumbrado;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Farola extends Object {
+public class Farola {
 	boolean estado;
 	List<Farola> vecinas;
 	

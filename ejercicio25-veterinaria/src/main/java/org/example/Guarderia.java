@@ -3,7 +3,7 @@ package org.example;
 import java.time.LocalDate;
 
 public class Guarderia extends Servicio{
-    private int cantDias;
+    private final int cantDias;
     private LocalDate fechaIngreso;
 
     public Guarderia(Mascota mascota, LocalDate fechaAtencion, int cantDias) {
