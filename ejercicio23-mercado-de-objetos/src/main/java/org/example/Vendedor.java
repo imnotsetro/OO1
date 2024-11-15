@@ -9,4 +9,8 @@ public class Vendedor extends Persona{
         super(nombre, direccion);
         this.productoEnVenta = productoEnVenta;
     }
+
+    public void agregarProducto(Producto unProducto){
+        this.productoEnVenta.add(unProducto);
+    }
 }
