@@ -7,9 +7,10 @@ public abstract class Usuario {
     private double saldo;
     private List<Viaje> viajesRealizados;
 
-    public Usuario(String nombre, double saldo) {
+    public Usuario(String nombre, double saldo, List<Viaje> viajesRealizados) {
         this.nombre = nombre;
         this.saldo = saldo;
+        this.viajesRealizados = viajesRealizados;
     }
 
     public String getNombre() {
@@ -20,17 +21,25 @@ public abstract class Usuario {
         return saldo;
     }
 
+    public void setViajesRealizados(List<Viaje> viajesRealizados) {
+        this.viajesRealizados = viajesRealizados;
+    }
+
+    public List<Viaje> getViajesRealizados() {
+        return viajesRealizados;
+    }
+
     abstract public double getComision();
 
     abstract public void pagarViaje(double monto);
 
     protected void procesarViaje(Viaje viaje, double monto){
-        this.viajesRealizados.add(viaje);
         this.pagarViaje(monto);
+        this.viajesRealizados.add(viaje);
     }
 
     protected void cargarSaldo(double monto){
-        this.saldo += (monto - (monto * this.getComision()));
+        this.saldo += (monto * this.getComision());
     }
 
     protected void descontarSaldo(double monto){

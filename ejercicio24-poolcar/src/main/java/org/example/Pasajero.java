@@ -5,16 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pasajero extends Usuario{
-    private List<Viaje> viajes;
 
-    public Pasajero(String nombre, double saldo, List<Viaje> viajes) {
-        super(nombre, saldo);
-        this.viajes = new ArrayList<>();
+    public Pasajero(String nombre, double saldo, List<Viaje> viajesRealizados) {
+        super(nombre, saldo, viajesRealizados);
     }
 
     @Override
     public double getComision(){
-        if (this.viajes.stream().findAny().filter(v -> v.fechaAnteriorADias(30)).isPresent()) {
+        if (this.getViajesRealizados().stream().findAny().filter(v -> v.fechaAnteriorADias(30)).isPresent()) {
             return 0.90;
         }
         return 1.0;
@@ -25,7 +23,7 @@ public class Pasajero extends Usuario{
     }
 
     public void pagarViaje(double monto) {
-        if (!this.viajes.isEmpty()) {
+        if (!this.getViajesRealizados().isEmpty()) {
             this.descontarSaldo(monto - 500.0);
         } else {
             this.descontarSaldo(monto);

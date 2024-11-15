@@ -26,6 +26,10 @@ public class Viaje {
         return origen;
     }
 
+    public int getCantPasajeros(){
+        return this.listaPasajeros.size();
+    }
+
     public String getDestino() {
         return destino;
     }
@@ -43,7 +47,7 @@ public class Viaje {
     }
 
     public void agregarPasajero(Usuario usuario) {
-        if (this.vehiculo.hayLugar(this.listaPasajeros.size())){
+        if (this.vehiculo.hayLugar(this.getCantPasajeros())){
             this.listaPasajeros.add(usuario);
         }
     }
@@ -53,10 +57,10 @@ public class Viaje {
     }
 
     public double getCostoIndividual() {
-        return this.costoTotal / this.vehiculo.capacidadActual(this.listaPasajeros.size());
+        return this.costoTotal / this.getCantPasajeros();
     }
 
     public void procesarViaje() {
-        this.listaPasajeros.stream().forEach(u -> u.procesarViaje(this, this.getCostoIndividual()));
+        this.listaPasajeros.forEach(u -> u.procesarViaje(this, this.getCostoIndividual()));
     }
 }

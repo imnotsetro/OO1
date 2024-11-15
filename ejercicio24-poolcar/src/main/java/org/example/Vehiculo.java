@@ -23,6 +23,10 @@ public class Vehiculo {
         return propietario;
     }
 
+    public void setPropietario(Conductor propietario) {
+        this.propietario = propietario;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -41,10 +45,6 @@ public class Vehiculo {
 
     public boolean hayLugar(int cant){
         return this.capacidad > cant;
-    }
-
-    public int capacidadActual(int cantPasajeros){
-        return this.capacidad - cantPasajeros;
     }
 
     public double getValorMercado() {

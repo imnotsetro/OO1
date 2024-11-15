@@ -1,10 +1,16 @@
 package org.example;
 
+import java.util.List;
+
 public class Conductor extends Usuario{
     private Vehiculo vehiculoPropio;
 
-    public Conductor(String nombre, double saldo, Vehiculo vehiculoPropio) {
-        super(nombre, saldo);
+    public Conductor(String nombre, double saldo, List<Viaje> viajesRealizados, Vehiculo vehiculoPropio) {
+        super(nombre, saldo, viajesRealizados);
+        this.vehiculoPropio = vehiculoPropio;
+    }
+
+    public void setVehiculoPropio(Vehiculo vehiculoPropio) {
         this.vehiculoPropio = vehiculoPropio;
     }
 
