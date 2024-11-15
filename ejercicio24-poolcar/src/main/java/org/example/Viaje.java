@@ -19,7 +19,7 @@ public class Viaje {
         this.vehiculo = vehiculo;
         this.fechaViaje = fechaViaje;
         this.listaPasajeros = new ArrayList<>();
-        this.agregarPasajero(this.vehiculo.getPropietario());
+        this.listaPasajeros.add(this.vehiculo.getPropietario());
     }
 
     public String getOrigen() {
@@ -47,7 +47,7 @@ public class Viaje {
     }
 
     public void agregarPasajero(Usuario usuario) {
-        if (this.vehiculo.hayLugar(this.getCantPasajeros())){
+        if (this.vehiculo.hayLugar(this.getCantPasajeros()) && (this.fechaViaje.isBefore(LocalDate.now().minusDays(2)))){
             this.listaPasajeros.add(usuario);
         }
     }

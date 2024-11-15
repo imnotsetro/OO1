@@ -29,6 +29,10 @@ public abstract class Usuario {
         return viajesRealizados;
     }
 
+    public boolean tieneSaldo(){
+        return this.getSaldo() > 0;
+    }
+
     abstract public double getComision();
 
     abstract public void pagarViaje(double monto);

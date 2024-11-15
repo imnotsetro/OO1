@@ -20,6 +20,46 @@ class PasajeroTest {
     }
 
     @Test
+    void registrarViajeA3Dias() {
+        conductor = new Conductor("Javier", 500, new ArrayList<>(), vehiculo);
+        vehiculo.setPropietario(conductor);
+        Viaje viaje = new Viaje("testOrigen", "testDestino", 5000.0, vehiculo, LocalDate.now().minusDays(3));
+        pasajero = new Pasajero("Michael", 5000.0, new ArrayList<>());
+        pasajero.registrarViaje(viaje);
+        assertEquals(2, viaje.getCantPasajeros());
+    }
+
+    @Test
+    void registrarViajeA2Dias() {
+        conductor = new Conductor("Javier", 500, new ArrayList<>(), vehiculo);
+        vehiculo.setPropietario(conductor);
+        Viaje viaje = new Viaje("testOrigen", "testDestino", 5000.0, vehiculo, LocalDate.now().minusDays(2));
+        pasajero = new Pasajero("Michael", 5000.0, new ArrayList<>());
+        pasajero.registrarViaje(viaje);
+        assertEquals(1, viaje.getCantPasajeros());
+    }
+
+    @Test
+    void registrarViajeA1Dias() {
+        conductor = new Conductor("Javier", 500, new ArrayList<>(), vehiculo);
+        vehiculo.setPropietario(conductor);
+        Viaje viaje = new Viaje("testOrigen", "testDestino", 5000.0, vehiculo, LocalDate.now().minusDays(1));
+        pasajero = new Pasajero("Michael", 5000.0, new ArrayList<>());
+        pasajero.registrarViaje(viaje);
+        assertEquals(1, viaje.getCantPasajeros());
+    }
+
+    @Test
+    void registrarViajeSaldoNegativo() {
+        conductor = new Conductor("Javier", 500, new ArrayList<>(), vehiculo);
+        vehiculo.setPropietario(conductor);
+        Viaje viaje = new Viaje("testOrigen", "testDestino", 5000.0, vehiculo, LocalDate.now().minusDays(1));
+        pasajero = new Pasajero("Michael", 0, new ArrayList<>());
+        pasajero.registrarViaje(viaje);
+        assertEquals(1, viaje.getCantPasajeros());
+    }
+
+    @Test
     void pagarViajeSinViajes() {
         pasajero = new Pasajero("Michael", 5000.0, new ArrayList<>());
         this.pasajero.pagarViaje(1000);

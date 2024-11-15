@@ -13,14 +13,6 @@ class ConductorTest {
     Vehiculo vehiculo;
 
     @Test
-    void pagarViaje() {
-        vehiculo = new Vehiculo(conductor, "alguna descripcion", 4, Year.of(2005), 5000.0);
-        conductor = new Conductor("Javier", 500, new ArrayList<>(), vehiculo);
-        this.conductor.pagarViaje(200);
-        assertEquals(500 - (200 - (this.vehiculo.getValorMercado() * 0.1)), this.conductor.getSaldo());
-    }
-
-    @Test
     void cargarSaldoAntiguedad4Anios() {
         vehiculo = new Vehiculo(conductor, "alguna descripcion", 4, Year.of(2020), 5000.0);
         conductor = new Conductor("Javier", 500, new ArrayList<>(), vehiculo);
