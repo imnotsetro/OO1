@@ -14,43 +14,38 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
 
     @Override
     public boolean add(T element) {
-        if (this.elements.get(element) == null) {
-            this.elements.put(element, 1);
-        } else {
-            int vf = this.elements.get(element);
+        if (this.elements.containsKey(element)) {
+            int vf = occurrencesOf(element);
             this.elements.replace(element, vf++);
+        } else {
+            this.elements.put(element, 1);
         }
         return true;
     }
 
     @Override
     public int occurrencesOf(T element) {
-        if (this.elements.get(element) != null) {
-            return this.elements.get(element);
-        }
-        return 0;
+        return elements.getOrDefault(element, 0);
     }
 
     @Override
     public void removeOccurrence(T element) {
-        if (this.elements.get(element) != null) {
-            int vf = this.elements.get(element);
-            if (vf > 1) {
-                this.elements.replace(element, vf--);
-            } else {
-                this.elements.remove(element);
-            }
+        if (this.elements.containsKey(element)){
+            int vf = occurrencesOf(element);
+            this.elements.replace(element, --vf);
         }
     }
 
     @Override
     public void removeAll(T element) {
-        this.elements.remove(element);
+        if (elements.containsKey(element)) {
+            elements.remove(element);
+        }
     }
 
     @Override
     public int size() {
-       return this.elements.values().stream().mapToInt(Integer::intValue).sum();
+       return this.elements.values().stream().mapToInt(valor -> valor).sum();
     }
 
     @Override
